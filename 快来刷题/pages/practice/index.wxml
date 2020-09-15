@@ -1,0 +1,24 @@
+<!--pages/DB/start.wxml-->
+<!--<image class='mainBg' src='../../static/img/bg_index.png'></image>-->
+
+<view class="top">
+<!--小程序轮播组件swiper，其中相 关参数由后台list.js控制-->
+<swiper indicator-dots="{{indicator}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">  
+<block wx:for="{{imgUrls}}" wx:key="_imgUrls"> 
+   <swiper-item>  
+     <navigator hover-class="navigator-hover">  
+     <image src="{{item.url}}" class="slide-image"/>  
+     </navigator>
+    </swiper-item>   
+ </block>  
+</swiper>  
+</view> 
+
+
+<view class='startpage'>
+  <text decode='true'>本习题库共&nbsp;{{subjectNum}}&nbsp;题。\n</text>
+  <text>\n</text>
+  <button class='zan-btn--primary' bindtap='loadSubjects'>开始练习</button>
+</view>
+
+

@@ -1,0 +1,29 @@
+<!--pages/welcome/welcome.wxml-->
+<!--<image class='mainBg' src='../../static/img/bg_main.png' bindtap='bindBgImgTap'></image>-->
+<!-- 背景动画 -->
+
+<view class='cloud-container'>
+  <image class="cloud" src="/static/img/cloud.png" mode="aspectFill"></image>
+  <image class="cloud cloud-middle" src="/static/img/cloud.png" mode="aspectFill"></image>
+</view>
+
+<view class='mainbg'>
+
+  <view>欢迎登录</view>
+  <view bindtap='bindBgImgTap'>
+    <button class='zan-btn--primary' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点击获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+    </block>  
+  </view>
+
+</view>
+
+<!--页脚-->
+<view class='container weui-footer'>
+  <view class='weui-footer__link'>
+    2019 © a1534928085@163.com
+  </view>
+</view>
+

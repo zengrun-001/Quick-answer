@@ -1,0 +1,63 @@
+/* pages/about/about.wxss */
+page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.pageHeader {
+  background: -webkit-radial-gradient(circle, rgba(255, 192, 203, 0.0) 30%, white);
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.pageHeader-img {
+  margin: 5% 3%;
+  width: 150rpx;
+  height: 150rpx;
+  border: 2px solid pink;
+  border-radius: 50%;
+}
+
+.pageBody {
+  padding: 2% 2%;
+  border-top: 2px solid wheat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+}
+.pageBody-row {
+  padding: 1% 3% 1% 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.pageBody-row__btn {
+  padding: 5% 20% 5% 20%;  
+  border: 0px solid red;
+}
+.input-content {
+  width: 75%;  
+  padding: 1% 2% 1% 3%;
+  color: gray;
+  text-align: center;
+  border: 1px solid wheat;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.input-content__view {
+  width: 88%;
+}
+.input-content__img {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+

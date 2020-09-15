@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/practice/index",
+    "pages/practice/practice",
+    "pages/test/index",
+    "pages/test/test",
+    "pages/rank/rank",
+    "pages/about/about",
+    "pages/admin/admin",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "快来刷题",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "background": "red",
+    "list": [
+      {
+        "pagePath": "pages/practice/index",
+        "text": "练习",
+        "iconPath": "static/img/practice.png",
+        "selectedIconPath": "static/img/practice-on.png"
+      },
+      {
+        "pagePath": "pages/test/index",
+        "text": "测试",
+        "iconPath": "static/img/test.png",
+        "selectedIconPath": "static/img/test-on.png"
+      },
+      {
+        "pagePath": "pages/rank/rank",
+        "text": "排行",
+        "iconPath": "static/img/rank.png",
+        "selectedIconPath": "static/img/rank-on.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "我的",
+        "iconPath": "static/img/user.png",
+        "selectedIconPath": "static/img/user-on.png"
+      }
+    ]
+  },
+  "newworkTimeout": {
+    "request": 10000,
+    "Downloadfile": 10000
+  },
+  "sitemapLocation": "sitemap.json"
+}

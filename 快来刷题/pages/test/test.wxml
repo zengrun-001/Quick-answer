@@ -1,0 +1,74 @@
+<!--pages/practice/practice.wxml-->
+<!-- 背景动画 -- 云 -->
+<import src='../../static/template/template.wxml'/>
+<template is='backgd-cloud'/>
+
+<view class='hua-cell' bindtouchstart='cellTouchStart' bindtouchmove='cellTouchMove' bindtouchend='cellTouchEnd'>
+  <image src='../../static/img/sheet.png' class='mask-body--header_img' bindtap='showMask'></image>
+  <text decode='true' class='hua-cell__subjectIndex' style='font-size: 22pt;'>{{subjectIndex_wxml}}</text>
+  <text decode='true' class='hua-cell__subjectNum'>&nbsp;/&nbsp;{{subjectNum}}</text>
+
+  <view class='weui-toptips hua-toptips_warn' wx:if='{{showWrongToptips}}'>错误</view>
+  <view class='weui-toptips hua-toptips_right' wx:if='{{showRightToptips}}'>正确</view>
+</view>
+
+<view class='huapage'>
+  <!-- 题干部分 -->
+  <view class='huapage-subject__top'></view>
+  <view class='huapage-subject'>
+    <text wx:if='{{subjectType == 0}}'>[<text style='color:blue; font-style:bold;'>单选题</text>] </text>
+    <text wx:if='{{subjectType == 1}}'>[<text style='color:blue; font-style:bold;'>多选题</text>] </text>
+    <text>{{subject}}</text>
+  </view>
+  <!-- 选项及解析部分 -->
+  <scroll-view class='huapage-scrollview' scroll-y='true' style='height:{{optionScrollViewHeight}}px;'>
+    <view class='huapage-options'>
+      <checkbox-group bindchange='optionsRatioClick'>
+        <label style='display: flex' wx:for='{{options}}' wx:key="*.this">
+          <checkbox value='{{item.alpha}}' checked='{{item.chkbxChecked}}'>
+            <text class='hua-cell__subjectIndex'>{{item.alpha}}</text>
+            <text decode='true'>&nbsp;.&nbsp;{{item.option}}</text>
+          </checkbox>      
+        </label>      
+      </checkbox-group>
+    </view>
+
+    <view class='huapage-analysis' hidden='true'>
+      <text decode='true'>
+        答案：&nbsp;{{stdAnswersToWxml}}
+        解析：&nbsp;{{answerAnalysis}}
+      </text>
+    </view>
+  </scroll-view>
+</view>
+
+
+
+<view class='page-footer'>
+  <button class='huaBottomBtn' hover-class='huaBottomBtn-hover' disabled='{{nextSubjectBtn_disabled}}' bindtap='nextSubject'>下一题</button>
+</view>
+
+
+<!-- 显示答题卡 -->
+<view class='mask' hidden='{{maskHidden}}'>
+  <view class='mask-body'>
+    <view class='mask-body--header'>
+      <image src='../../static/img/sheet.png' class='mask-body--header_img' bindtap='showMask'></image>
+      <text decode='true' class='hua-cell__subjectIndex' style='font-size: 22pt;'>{{subjectIndex_wxml}}</text>
+      <text decode='true' class='hua-cell__subjectNum'>&nbsp;/&nbsp;{{subjectNum}}</text>
+    </view>
+    <scroll-view scroll-y='true' style='height: 670rpx;'>
+      <view class='mask-body--content'>    
+        <block wx:for="{{maskSubjectArray}}" wx:key='{{index}}'>
+          <view id='{{index}}' wx:if="{{(subjectIndex_wxml-1) == index}}" class='mask-div' bindtap='maskDivTap' style='background-color: pink;'>{{item}}</view>
+          <view id='{{index}}' wx:elif="{{subjectColorArray[index] == 1}}" class='mask-div' bindtap='maskDivTap' style='background-color: green;'>{{item}}</view>
+          <view id='{{index}}' wx:elif="{{subjectColorArray[index] == 2}}" class='mask-div' bindtap='maskDivTap' style='background-color: red;'>{{item}}</view>
+          <view id='{{index}}' wx:else class='mask-div' bindtap='maskDivTap' style='background-color: white;'>{{item}}</view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+
+

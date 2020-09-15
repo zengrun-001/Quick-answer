@@ -1,0 +1,12 @@
+<!--pages/DB/start.wxml-->
+<!--<image class='mainBg' src='../../static/img/bg_index.png'></image>-->
+
+<view class='startpage'>
+  <text>\n\n</text>
+  <text decode='true'>本习题库共&nbsp;{{subjectNum}}&nbsp;题，每题&nbsp;{{scorePerSubject}}&nbsp;分，共&nbsp;{{scorePerSubject*subjectNum}}&nbsp;分。\n</text>
+  <text>\n</text><text>\n</text>
+
+  <button class='zan-btn--primary' bindtap='loadSubjects'>开始测试</button>
+</view>
+
+

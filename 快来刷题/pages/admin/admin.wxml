@@ -1,0 +1,34 @@
+<!--pages/admin/admin.wxml-->
+<!-- 背景动画 -- 云 -->
+<import src='../../static/template/template.wxml'/>
+<template is='backgd-cloud'/>
+
+<view class='viewLogin' hidden='{{hiddenLoginView}}'>
+  <form bindsubmit='btnLogin' bindreset='btnReturnToIndex'>
+    <view class='viewLogin-input'>
+      <view class='viewLogin-input__title'>账号：</view>
+      <view class='viewLogin-input__content'>
+        <input name='inputAdmin' placeholder='请输入账号'></input>
+      </view>  
+    </view>
+    <view class='viewLogin-input'>
+      <view class='viewLogin-input__title'>密码：</view>
+      <view class='viewLogin-input__content'>
+        <input name='inputPswd' placeholder='请输入密码' password='true'></input>
+      </view>  
+    </view>
+    <view class='viewLogin-button'>
+      <button class='zan-btn--primary' form-type='submit' loading='{{btnLoginLoading}}'><text decode='true'>&nbsp;&nbsp;登录&nbsp;&nbsp;</text></button>
+      <button class='zan-btn--primary' form-type='reset'><text decode='true'>&nbsp;&nbsp;退出&nbsp;&nbsp;</text></button>
+    </view>
+  </form>
+</view>
+
+
+<view class='viewContent' hidden='{{hiddenContentView}}'>
+  <button class='zan-btn--primary' bindtap='returnToIndex'>首页</button>
+  <button class='zan-btn--primary' bindtap='btnDbTest'>数据库</button>
+  
+</view>
+
+

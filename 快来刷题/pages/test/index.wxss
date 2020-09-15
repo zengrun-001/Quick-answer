@@ -1,0 +1,23 @@
+/* pages/DB/start.wxss */
+page {
+  background-image: url('');
+  background-repeat: round;
+}
+
+
+.startpage {
+  position: relative;
+  top: 30px;
+  height: 90%;
+  padding: 50rpx 80rpx;
+  opacity: 1;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+

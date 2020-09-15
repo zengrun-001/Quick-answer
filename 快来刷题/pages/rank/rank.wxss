@@ -1,0 +1,76 @@
+/**rank.wxss**/
+
+.Scroll-view {
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 94%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.container_rank {
+  margin: 1% 1%;
+  padding-bottom: 3%;
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid wheat;
+}
+
+.container_rank_title {
+  margin-top: 40rpx;
+  font-size: 16pt;
+  font-style: bold;
+}
+
+.rank_row1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 192, 203, 0.4);
+  text-align: center;
+}
+
+.rank_row2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 192, 203, 0.6);
+  text-align: center;
+}
+
+.rank_row_item_index {
+  width: 20%;
+}
+.rank_row_item_avatar {
+  width: 22%;
+}
+.rank_row_item_nickName {
+  width: 40%;  
+  word-break: break-all;
+  text-align: left;
+}
+.rank_row_item_score {
+  width: 18%;
+}
+
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  border: 1px solid pink;
+}
+
+.userinfo-score {
+  color: green;
+  font-size: 16pt;
+  font-style: italic;
+}
+

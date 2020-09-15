@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<!-- 背景动画 -- 云 -->
+<import src='../../static/template/template.wxml'/>
+<template is='backgd-cloud'/>
+
+<view class='container_rank'>
+  <view bindtap='onSort' class='container_rank_title'>排行榜</view>
+  <scroll-view scroll-y='true'  class='Scroll-view' style='height: 650rpx;'>
+    <block wx:for='{{userScores}}' wx:key='{{nickName}}'>
+      <view class='rank_row1' wx:if='{{index % 2 == 0}}'>
+        <view class='rank_row_item_index'><text class="userinfo-nickname">{{index+1}}</text></view>
+        <view class='rank_row_item_avatar'><image class="userinfo-avatar" src="{{item.avatarUrl}}" background-size="cover"></image></view>
+        <view class='rank_row_item_nickName'><text class="userinfo-nickname">{{item.nickName}}</text></view>
+        <view class='rank_row_item_score'><text class="userinfo-score">{{item.score}}</text></view>
+      </view>
+      <view class='rank_row2' wx:if='{{index % 2 == 1}}'>
+        <view class='rank_row_item_index'><text class="userinfo-nickname">{{index+1}}</text></view>
+        <view class='rank_row_item_avatar'><image class="userinfo-avatar" src="{{item.avatarUrl}}" background-size="cover"></image></view>
+        <view class='rank_row_item_nickName'><text class="userinfo-nickname">{{item.nickName}}</text></view>
+        <view class='rank_row_item_score'><text class="userinfo-score">{{item.score}}</text></view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <view class='Scroll-view'>
+    <view class='rank_row1'>
+      <view class='rank_row_item_index'>{{myScore.index+1}}</view>
+      <view class='rank_row_item_avatar'><image class="userinfo-avatar" src="{{myScore.avatarUrl}}" background-size="cover"></image></view>
+      <view class='rank_row_item_nickName'>{{myScore.nickName}}</view>
+      <view class='rank_row_item_score'><text class="userinfo-score">{{myScore.score}}</text></view>
+    </view>
+  </view>
+</view>
+
+<!--页脚-->
+<view class='container weui-footer'>
+  <view class='weui-footer__link'>
+    2019 © a1534928085@163.com
+  </view>
+</view>

@@ -1,0 +1,6 @@
+<template name='backgd-cloud'>
+  <!-- 背景云动画 -->
+  <view class='cloud-container'>
+    <image class='cloud' mode='aspectFill' src='../../static/img/cloud.png'></image>
+  </view>
+</template>

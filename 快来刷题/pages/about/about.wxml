@@ -1,0 +1,56 @@
+<!--pages/about/about.wxml-->
+<!-- 背景动画 -- 云 -->
+<import src='../../static/template/template.wxml'/>
+<template is='backgd-cloud'/>
+
+<view class='weui-toptips hua-toptips_warn' wx:if='{{showWrongToptips}}'>{{wrongToptipsMessage}}</view>
+
+<view class='pageHeader'>
+  <image class='pageHeader-img' src='{{userInfo.avatarUrl}}' mode='aspectFit'></image>
+  <view>{{userInfo.nickName}}</view>
+</view>
+
+<form class='pageBody' bindsubmit='btnSave'>
+  <view class='pageBody-row'>
+    <view>姓名：</view>
+    <view class='input-content'>
+      <view class='input-content__view'>
+        <input name='userName' placeholder='姓名' value='{{initName}}'></input>
+      </view>
+      <image class='input-content__img' src='../../static/img/arrow-r.png'></image>
+    </view>
+  </view>
+  <view class='pageBody-row'>
+    <view>手机：</view>
+    <view class='input-content'>
+      <view class='input-content__view'>
+        <input name='Phone' placeholder='手机号（11位）' value='{{initPhone}}' bindblur='phoneBlur'></input>
+      </view>
+      <image class='input-content__img' src='../../static/img/arrow-r.png'></image>
+    </view>
+  </view>
+  <view class='pageBody-row'>
+    <view>单位：</view>
+    <view class='input-content'>
+      <view class='input-content__view'>
+        <picker value='{{pckCompanyIndex}}' range='{{arrayCompanyName}}' bindchange='pckCompany'>
+          {{arrayCompanyName[pckCompanyIndex]}}
+        </picker>
+      </view>
+      <image class='input-content__img' src='../../static/img/arrow-r.png'></image>
+    </view>
+  </view>
+  <view class='pageBody-row__btn'>
+    <button class='zan-btn--primary' form-type='submit'>保存</button>
+  </view>
+</form>
+
+
+
+<!--页脚-->
+<view class='container weui-footer'>
+  <!-- 此处放后台管理员入口 -->
+  <view class='weui-footer__link'>
+    2019 © a1534928085@163.com
+  </view>
+</view>

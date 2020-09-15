@@ -1,0 +1,28 @@
+<!--pages/temp/temp.wxml-->
+<!-- 背景动画 -- 云 -->
+<import src='../../static/template/template.wxml'/>
+<template is='backgd-cloud'/>
+
+<view class='mask' hidden='{{maskVisible}}'>
+  <view class='mask-body'>
+    <view class='mask-body--header'>
+      <image src='../../static/img/specialty.png' class='mask-body--header_img'></image>
+      <text decode='true'>&nbsp;{{currentSubjectIndex}}&nbsp;/&nbsp;20</text>
+    </view>
+    <scroll-view scroll-y='true' style='height: 650rpx;'> 
+      <view class='mask-body--body'>
+        <block wx:for="{{huatempArray}}" wx:key='{{index}}'>
+          <view id='{{index}}' wx:if="{{(maskDivIndex == index) || (maskDivColorEnable)}}" class='mask-div' bindtap='maskDivTap' style='background-color: pink;'>{{item}}</view>
+          <view id='{{index}}' wx:else class='mask-div' bindtap='maskDivTap' style='background-color: white;'>{{item}}</view>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<view>hua</view>
+<view>hua</view>
+<view>hua</view>
+
+<button class='zan-btn--primary' bindtap='showMask' style='margin-top: 100%'>显示</button>
+<checkbox checked='{{huaChecked}}'>{{huaChecked}}huayulong</checkbox>

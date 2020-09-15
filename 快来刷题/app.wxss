@@ -1,0 +1,122 @@
+/**app.wxss**/
+@import "/style/weui.wxss";
+@import "/style/zanui.wxss";
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 55rpx 0;
+  box-sizing: border-box;
+} 
+
+page {
+  background-image: url('');
+  background-repeat: round;
+  background-size: contain;
+
+}
+
+.cloud-container {
+  position: absolute;
+  margin-left: 10rpx;
+  width: 97%;
+  bottom: 50rpx;
+  height: 310rpx;
+  overflow: hidden;
+}
+
+.cloud {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  bottom: 30rpx;
+  opacity: 0.725;
+  height: 260rpx;
+  width: 2250rpx;
+  animation: cloud 10s linear infinite;
+}
+
+.cloud-middle {
+  bottom: 500rpx;
+  opacity: 0.5;
+  animation: cloud 10s linear infinite;
+}
+
+@keyframes cloud{
+  from {transform: translateX(-1200rpx);}
+  to {transform: translateX(0rpx);}
+}
+
+.hua-toptips_right {
+  background-color: rgba(0, 139, 0, 0.7);
+}
+
+.hua-toptips_warn {
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.mask-body {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  animation: pullDown 0.3s linear forwards;
+}
+@keyframes pullDown {
+  from {transform: translateY(-500px)}
+  to {transform: translateY(0px)}
+}
+
+.mask-body--header {
+  font-size: 16pt;
+  padding: 2% 3% 1% 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 2px solid wheat;
+}
+.mask-body--header_img {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.mask-body--content {
+  padding: 2% 3% 2% 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  animation: pullDown 0.3s linear forwards;
+}
+
+.mask-div {
+  margin: 1% 1.5%;
+  padding: 3% 3%;
+  height: 30rpx;
+  width: 30rpx;
+  border: 1px solid pink;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
